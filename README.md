@@ -1,1 +1,1 @@
-# GifTastic
+Page is populated with topics for user to choose from.  When the user clicks a button, gifs related to that button populate the page.  The user also has the option of requesting their own gifs through the input form.
