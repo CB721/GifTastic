@@ -1,4 +1,26 @@
+//initial topics and where user input will go
+let initialTopics = ["will arnett", "george clooney", "michael keaton", "adam west", "christian bale"];
+
+//create batman addition
+const batman = " batman";
+
 //array of options - "topics"
+var topics = [];
+
+
+  var combineStrings = " ";
+// add "batman" to the end of each string and push to topics array
+for (var i = 0; i < initialTopics.length; i++) {
+    
+    combineStrings = initialTopics[i].concat(batman);
+    console.log(combineStrings);
+    // batman += initialTopics[i];
+    topics.push(combineStrings);
+};
+
+console.log(topics);
+
+
 //display options as buttons
 //Giphy api link
 //on click event
