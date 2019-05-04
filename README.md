@@ -1,1 +1,1 @@
-Page is populated with topics for user to choose from.  When the user clicks a button, gifs related to that button populate the page.  The user also has the option of requesting their own gifs through the input form.
+Page is populated with actors who have played batman for user to choose from.  When the user clicks a button, gifs related to that actor and batman populate the page.  The user also has the option of requesting their own gifs through the input form.

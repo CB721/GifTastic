@@ -10,6 +10,8 @@ var topics = [];
 //create variable to place combined strings in
 var combineStrings = " ";
 
+var results;
+
 //function to add to array
 function userAdditions() {
     //prevent duplicate topics
@@ -57,12 +59,12 @@ $("#add-gif").on("click", function (event) {
     userAdditions();
     //reinitialize buttonSetUp function
     buttonSetUp();
-    console.log(topics);
 });
 
 //on click event
-$("button").on("click", function () {
-    console.log(this);
+$(document.body).on("click", ".topic", function () {
+    //clear gifs on button click
+    $("#gifView").empty();
     //create variable based on attribute of which button was pressed
     var person = $(this).attr("data-person");
     //create url with name of the person
@@ -80,7 +82,7 @@ $("button").on("click", function () {
         // After the data comes back from the API
         .then(function (response) {
             // Storing an array of results in the results variable
-            var results = response.data;
+            results = response.data;
 
             // Looping over every result item
             for (var q = 0; q < results.length; q++) {
@@ -107,11 +109,8 @@ $("button").on("click", function () {
 
                 // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
                 $("#gifs-appear-here").prepend(gifDiv);
-
             }
         });
-
-
 
 });
 
