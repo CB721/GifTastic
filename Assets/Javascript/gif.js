@@ -68,9 +68,6 @@ $("document").ready(function () {
         $("#gifView").empty();
         //create variable based on attribute of which button was pressed
         var person = $(this).attr("data-person");
-        //add initial state
-        var state = $(this).attr("data-state");
-        console.log(this);
         //create url with name of the person
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
             //attach api key and the person variable
@@ -109,6 +106,8 @@ $("document").ready(function () {
 
                     //give image tag a class for styling
                     personImage.addClass("gifImage");
+
+                    personImage.attr("data-state", "still");
 
                     // Appending the paragraph and personImage we created to the "gifDiv" div we created
                     gifDiv.append(p);
