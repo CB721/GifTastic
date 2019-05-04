@@ -17,6 +17,9 @@ for (var i = 0; i < initialTopics.length; i++) {
     //add new string to "topics array"
     topics.push(combineStrings);
 };
+
+//add user input to initial topics array
+
 //display topics as buttons
 for (var j = 0; j < topics.length; j++) {
     //generate button for each item in array
@@ -47,10 +50,45 @@ $("button").on("click", function () {
         url: queryURL,
         method: "GET"
     })
+
+        // After the data comes back from the API
+        .then(function (response) {
+            // Storing an array of results in the results variable
+            var results = response.data;
+
+            // Looping over every result item
+            for (var q = 0; q < results.length; q++) {
+
+                    // Push to html
+                    var gifDiv = $("#gifView");
+
+                    // Storing the result item's rating
+                    var rating = results[q].rating;
+
+                    // Creating a paragraph tag with the result item's rating
+                    var p = $("<p>").text("Rating: " + rating);
+
+                    // Creating an image tag
+                    var personImage = $("<img>");
+
+                    // Giving the image tag an src attribute of a proprty pulled off the
+                    // result item
+                    personImage.attr("src", results[q].images.fixed_height.url);
+
+                    // Appending the paragraph and personImage we created to the "gifDiv" div we created
+                    gifDiv.append(p);
+                    gifDiv.append(personImage);
+
+                    // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
+                    $("#gifs-appear-here").prepend(gifDiv);
+                
+            }
+        });
+
+
+
 });
 
-
-//each on click should add an additional 10 gifs, not overwrite (optional)
 //gifs should start as non-animated
 //create var to push to gifView div
 //display rating of each gif
