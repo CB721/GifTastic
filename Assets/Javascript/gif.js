@@ -70,7 +70,7 @@ $("document").ready(function () {
         var person = $(this).attr("data-person");
         //add initial state
         var state = $(this).attr("data-state");
-        console.log(state);
+        console.log(this);
         //create url with name of the person
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
             //attach api key and the person variable
@@ -106,6 +106,9 @@ $("document").ready(function () {
                     // Giving the image tag an src attribute of a proprty pulled off the
                     // result item
                     personImage.attr("src", results[q].images.fixed_height.url);
+
+                    //give image tag a class for styling
+                    personImage.addClass("gifImage");
 
                     // Appending the paragraph and personImage we created to the "gifDiv" div we created
                     gifDiv.append(p);
