@@ -1,0 +1,11 @@
+button {
+    height: 20px;
+    width: 50px;
+    padding: 10px;
+    background: black;
+    color: rgb(250, 250, 27);
+}
+
+#display-4 {
+    color: black;
+}
